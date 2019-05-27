@@ -1,0 +1,25 @@
+
+spring:
+  application:
+    name: tm-zull
+zuul:
+  routes:
+    api:
+      sensitiveHeaders:
+      path: /api/**
+      url: http://localhost:9090/api/
+
+    logout:
+      sensitiveHeaders:
+      path: /logout/**
+      url: http://localhost:9090/logout
+
+    login:
+      sensitiveHeaders:
+      path: /login/**
+      url: http://localhost:9090/login
+
+    spa:
+      sensitiveHeaders:
+      path: /**
+      url: http://localhost:1841/
